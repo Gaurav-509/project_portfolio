@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image And Text</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5"><img src="" alt="" id="imgTag" /></div>
+                <div class="col-md-7">
+                    <textarea name="" id="textarea-info" cols="72" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button onclick="stopDoing()">Stop</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const changingProperty = {
+            imagesAndText: [{
+                text: "Paragraphs are the building blocks of papers",
+                image: "/images/download.jpg",
+            }, {
+                text: "Many students define paragraphs in terms of length",
+                image: "/images/images (1).jpg",
+            }, {
+                text: "a paragraph is a group of at least five",
+                image: "/images/images (2).jpg",
+            }, {
+                text: "a paragraph is half a page long, etc. In reality, though, the unity and coherence ",
+                image: "/images/images.jpg",
+            }, {
+                text: "a group of sentences or a single sentence that forms a unit",
+                image: "/images/pexels-anjana-c-674010.jpg",
+            }, {
+                text: "appearance do not determine whether a section in a paper ",
+                image: "/images/photo-1541963463532-d68292c34b19.jpg",
+            }, ],
+            randomIndex() {
+                const randomItem = Math.floor(
+                    Math.random() * this.imagesAndText.length
+                );
+                var dataImage = this.imagesAndText[randomItem];
+                var imageData = dataImage.image;
+                var textData = dataImage.text;
+                document.getElementById("textarea-info").innerHTML = textData;
+                document.getElementById("imgTag").src = imageData;
+            },
+        };
+        var stopWorking = setInterval(() => {
+            changingProperty.randomIndex();
+        }, 1000);
+
+        function stopDoing() {
+            clearInterval(stopWorking);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thank You</title>
+</head>
+
+<body>
+    <h1 id="hone-perform">Thank You Guys For Being With Us.</h1>
+    <script>
+        var x = document.getElementById("hone-perform");
+        // y = document.getElementById("hone-perform");
+        x.style.fontSize = 80 + "px";
+        // y.style.color = "#8B008B";
+
+        function changeTextSize() {
+            x.style.fontSize =
+                x.style.fontSize == 100 + "px" ? 45 + "px" : 100 + "px";
+        }
+
+        // function randomColor() {
+        //     y.style.color == "#8B008B" ? "#228B22" : "#8B008B";
+        // }
+        setInterval(() => {
+            // randomColor();
+            changeTextSize();
+        }, 1000);
+
+        function changeColor() {
+            var x = document.querySelectorAll("#hone-perform");
+
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.color =
+                    x[i].style.color === "blue" ? "darkOliveGreen" : "blue";
+            }
+        }
+        window.setInterval(changeColor, 1000);
+    </script>
+</body>
+
+</html>
